@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="app">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- VENDORS CSS -->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/font-awesome.min.css">
+    <!-- VENDORS CSS -->
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<a ui-sref="hello" ui-sref-active="active">Hello</a>
+    <a ui-sref="about" ui-sref-active="active">About</a>
+
+<ui-view></ui-view>
+
+<!-- VENDORS JS -->
+<script type="text/javascript" src="vendor/jquery.min.js"></script>
+<script type="text/javascript" src="vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="vendor/angular.min.js"></script>
+<script type="text/javascript" src="vendor/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="vendor/angular-resource.min.js"></script>
+<script type="text/javascript" src="vendor/angular-animate.min.js"></script>
+<!-- VENDOR JS -->
+
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/app.routes.js"></script>
+<script type="text/javascript" src="js/app.config.js"></script>
+
+<script type="text/javascript" src="js/controllers/helloCtrl.js"></script>
+<script type="text/javascript" src="js/controllers/aboutCtrl.js"></script>
+
+<script type="text/javascript" src="js/services/client.js"></script>
+
+</body>
+
+</html>
