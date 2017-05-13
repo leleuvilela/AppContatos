@@ -1,8 +1,10 @@
 angular.module('app.controllers')
     .controller('indexCtrl', ['$scope', '$http', function ($scope, $http) {
-        $scope.novocontato=
+        $scope.novaPessoa=
             {
-                telefones: [
+                nome: '',
+                cpf: '',
+                contato: [
                     {
                         num: '',
                         desc: ''
@@ -10,12 +12,12 @@ angular.module('app.controllers')
                 ]
             };
 
-        $scope.contatos;
+        $scope.pessoas;
 
         $http.get("api/ler.php")
             .then(function(response) {
-                $scope.contatos =  response.data ;
-                console.log($scope.contatos)
+                $scope.pessoas =  response.data ;
+                console.log($scope.pessoas)
             });
 
 
@@ -23,13 +25,13 @@ angular.module('app.controllers')
         $scope.ler = function() {
             $http.get("api/ler.php")
                 .then(function(response) {
-                    $scope.contatos = response.data;
+                    $scope.pessoas = response.data;
                 });
         };
 
         $scope.salvar = function () {
-            console.log($scope.novocontato);
-            $http.post("api/gravar.php", $scope.novocontato)
+            console.log($scope.novaPessoa);
+            $http.post("api/gravar.php", $scope.novaPessoa)
                 .then(function() {
                     $scope.ler();
                 }).catch(function(data, status, headers, config) {
@@ -38,9 +40,9 @@ angular.module('app.controllers')
         };
 
         $scope.addnum = function(){
-            $scope.novocontato.telefones.push({});
+            $scope.novaPessoa.contato.push({});
         };
 
-        // console.log($scope.contatos);
+        // console.log($scope.pessoas);
 
     }]);

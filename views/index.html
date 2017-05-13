@@ -5,13 +5,13 @@
             <h1>Cadastro de Pessoa</h1>
                 <div class="form-group">
                     <label for="nome">Nome</label>
-                    <input type="text" class="form-control" id="nome" placeholder="Nome" ng-model="novocontato.nome">
+                    <input type="text" class="form-control" id="nome" placeholder="Nome" ng-model="novaPessoa.nome">
                 </div>
                 <div class="form-group">
                     <label for="cpf">CPF</label>
-                    <input type="text" class="form-control" id="cpf" placeholder="CPF" ng-model="novocontato.cpf">
+                    <input type="text" class="form-control" id="cpf" placeholder="CPF" ng-model="novaPessoa.cpf">
                 </div>
-                <input type="hidden" ng-model="novocontato.id">
+                <input type="hidden" ng-model="novaPessoa.id">
                 <button type="submit" class="btn btn-default" ng-click="salvar()">Enviar</button>
             </div>
             <div class="col-md-6">
@@ -23,7 +23,7 @@
                         </tr> 
                     </thead> 
                     <tbody> 
-                        <tr ng-repeat="tel in novocontato.telefones"> 
+                        <tr ng-repeat="tel in novaPessoa.contato">
                             <td><input type="text" class="form-control" placeholder="Número" ng-model="tel.num"></td> 
                             <td><input type="text" class="form-control" placeholder="Descrição do num." ng-model="tel.desc"></td>
                         </tr>
@@ -49,12 +49,12 @@
                     </tr> 
                 </thead> 
                 <tbody> 
-                    <tr ng-repeat="contato in contatos">
-                        <td>{{contato.nome}}</td>
-                        <td>{{contato.cpf}}</td>
+                    <tr ng-repeat="pessoa in pessoas">
+                        <td>{{pessoa.nome}}</td>
+                        <td>{{pessoa.cpf}}</td>
                         <td>
-                            <div ng-repeat="telefone in contato.telefones">
-                                {{telefone.num}} - {{telefone.desc}}
+                            <div ng-repeat="contato in pessoa.contato">
+                                {{contato.num}} - {{contato.desc}}
                             </div>
                         </td>
                     </tr>
